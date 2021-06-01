@@ -9,18 +9,18 @@ class Product {
       Product('assets/macbook.jpeg','Macbook Pro', '5', '6', '20', '60', '1'),
     ];
     String imageUrl;
-    String product_name;
+    String productName;
     String rating;
-    String number_of_reviews;
+    String numberOfReviews;
     String stock;
     String price;
     String quantity;
     // Short form constructor.
     Product(
       this.imageUrl,
-      this.product_name,
+      this.productName,
       this.rating,
-      this.number_of_reviews,
+      this.numberOfReviews,
       this.stock,
       this.price,
       this.quantity
