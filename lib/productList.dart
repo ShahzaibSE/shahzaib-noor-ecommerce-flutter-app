@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'products.dart';
 
 class ProductList extends StatefulWidget {
   ProductList({Key? key, required this.title}) : super(key: key);
@@ -10,14 +11,19 @@ class ProductList extends StatefulWidget {
 }
 
 class _ProductListState extends State<ProductList>{
+
+  Widget buildProductCard(Product product){
+    return Card(
+      child: Column(
+
+      )
+    );
+  }
   //
   @override
   Widget build(BuildContext context){
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: SingleChildScrollView(
+    return Container(
+      child: SingleChildScrollView(
         child: Column(
           children: [],
         ),
