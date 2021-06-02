@@ -18,7 +18,7 @@ class _ProductListState extends State<ProductList>{
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(height: 100),
-          Image(image: AssetImage(product.imageUrl),),
+          Image(image: AssetImage(product.imageUrl), width:100, height: 100),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -38,10 +38,11 @@ class _ProductListState extends State<ProductList>{
   @override
   Widget build(BuildContext context){
     return Container(
-      child: SingleChildScrollView(
-        child: Column(
-          children: [],
-        ),
+        child: ListView.builder(
+          itemCount: Product.products.length,
+          itemBuilder: (BuildContext context, int index) {
+            return buildProductCard(Product.products[index]);
+          },
       ),
     );
   }
