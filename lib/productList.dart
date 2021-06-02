@@ -110,12 +110,12 @@ class _ProductListState extends State<ProductList>{
   @override
   Widget build(BuildContext context){
     return Container(
-        child: ListView.builder(
-          itemCount: Product.products.length,
-          itemBuilder: (BuildContext context, int index) {
-            return buildProductCard(Product.products[index]);
-          },
-      ),
-    );
+          child: ListView.builder(
+            itemCount: Product.products.length,
+            itemBuilder: (BuildContext context, int index) {
+              return buildProductCard(Product.products[index]);
+            },
+        ),
+      );
   }
 }

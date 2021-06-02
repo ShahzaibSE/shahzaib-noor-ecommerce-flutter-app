@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'productList.dart';
 import 'history.dart';
+import 'userProfile.dart';
 
 void main() {
   runApp(MyApp());
@@ -48,7 +49,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _scaffoldKey = new GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -59,8 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      key: _scaffoldKey,
       appBar: AppBar(
+        automaticallyImplyLeading: true,
         leading: Builder(builder: (context) => // Ensure Scaffold is in context
             IconButton(
               icon: Icon(Icons.menu),
@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: Drawer(
         child: ListView(
                 padding: EdgeInsets.zero,
-                children: const <Widget>[
+                children: <Widget>[
                   DrawerHeader(
                     decoration: BoxDecoration(
                       color: Colors.blue,
@@ -88,16 +88,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   ListTile(
-                    leading: Icon(Icons.message),
-                    title: Text('Messages'),
-                  ),
-                  ListTile(
                     leading: Icon(Icons.account_circle),
                     title: Text('Profile'),
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>UserProfile()));
+                    },
                   ),
                   ListTile(
-                    leading: Icon(Icons.settings),
-                    title: Text('Settings'),
+                    leading: Icon(Icons.message),
+                    title: Text('History'),
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>History()));
+                    },
                   ),
                 ],
               ),

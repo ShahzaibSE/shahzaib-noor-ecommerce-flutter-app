@@ -10,8 +10,14 @@ class _HistoryState extends State<History>{
   //
   @override
   Widget build(BuildContext context){
-    return Center(
-      child: Text('History'),
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+        title: Text('History'),
+      ),
+      body:Center(
+        child: Text('History'),
+      )
     );
   }
 }
