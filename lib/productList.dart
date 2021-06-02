@@ -28,6 +28,7 @@ class _ProductListState extends State<ProductList>{
             mainAxisAlignment: MainAxisAlignment.center,
             children:[
               Container(
+                padding: const EdgeInsets.all(10),
                 width: 150,
                 height: 150,
                 child:Image(image: AssetImage(product.imageUrl)),
