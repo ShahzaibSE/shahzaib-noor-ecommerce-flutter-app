@@ -71,10 +71,15 @@ class _UserProfileState extends State<UserProfile> {
                 ),
                 Container(
                   padding: EdgeInsets.only(left: 20, right: 20, top: 20),
-                  child: Text('Full Name',
-                              style: TextStyle(fontWeight: FontWeight.bold,
-                                              fontSize: 16)
-                  )
+                  child: Row(
+                    children: [
+                        Text('Full Name',
+                                  style: TextStyle(fontWeight: FontWeight.bold,
+                                                  fontSize: 16)
+                        ),
+                        Container(child:Icon(Icons.edit), padding: EdgeInsets.only(left: 250))
+                      ]
+                    )
                 ),
                 Container(
                   padding: EdgeInsets.only(left: 20, right: 20, bottom: 15, top: 5),
