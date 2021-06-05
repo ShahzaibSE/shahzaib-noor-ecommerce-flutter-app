@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'productList.dart';
-import 'history.dart';
-import 'userProfile.dart';
+import 'productList.widget.dart';
+import 'history.widget.dart';
+import 'userProfile.widget.dart';
 
 void main() {
   runApp(MyApp());
