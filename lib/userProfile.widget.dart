@@ -13,7 +13,10 @@ class _UserProfileState extends State<UserProfile> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Profile'), 
+        title: Text('Profile', 
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold
+                    )), 
       ),
       body:Center(
         child: Column(

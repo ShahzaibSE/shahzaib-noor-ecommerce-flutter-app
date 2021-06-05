@@ -13,7 +13,10 @@ class _HistoryState extends State<History>{
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('History'),
+        title: Text('History', 
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold
+                    )),
       ),
       body:Center(
         child: Text('History'),
