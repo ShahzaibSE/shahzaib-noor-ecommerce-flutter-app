@@ -9,27 +9,36 @@ class History extends StatefulWidget {
 
 class _HistoryState extends State<History>{
   List<Widget> buildHistory() {
-    var products = Product.products;
+    var products = Product.products; //Source
+    //
     List<Widget> historyWidgets = [];
-    for (num i=0; i<products.length;i++){
+    for (int i=0; i<products.length;i++){
+      var numberOfReviews = products[i].numberOfReviews;
+      var rating = products[i].rating;
+      var stock = products[i].stock;
+      var price = '\$'+products[i].price;
+      var quantity = products[i].quantity;
+      var imageUrl = products[i].imageUrl;
+      var productName = products[i].productName;
       historyWidgets.add(
           Container(
-            padding: EdgeInsets.only(top: 10, bottom:10),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    padding: EdgeInsets.only(left:10),
+                    padding: EdgeInsets.all(10),
                     child: CircleAvatar(
                       radius: 30,
-                      backgroundImage: AssetImage('assets/iphone.jpeg')
+                      backgroundImage: AssetImage(imageUrl)
                     )
                   ),
                   Column(
                     children: [
                       Container(
-                        child: Text('IPhone 12', 
+                        // padding: EdgeInsets.only(left: 20, right: 20),
+                        padding: const EdgeInsets.only(left:10),
+                        child: Text(productName, 
                             style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold
@@ -37,20 +46,21 @@ class _HistoryState extends State<History>{
                         )
                       ),
                         Container(
-                          padding: EdgeInsets.only(left:30),
+                          // padding: EdgeInsets.only(left: 20, right: 20),
+                          padding: const EdgeInsets.only(left:10),
                           child:RichText(text: TextSpan(
                                 style: Theme.of(context).textTheme.bodyText1,
                                 children: [
                                   WidgetSpan(
                                     child: Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
                                       child:  Icon(
                                         Icons.star_rounded,
                                         color: Colors.yellowAccent,
                                       ),
                                     )
                                   ),
-                                  TextSpan(text: '5 (23 Reviews)', 
+                                  TextSpan(text: '$rating ($numberOfReviews Reviews)', 
                                           style: Theme.of(context).textTheme.bodyText1)
                                 ]
                               )
@@ -59,8 +69,8 @@ class _HistoryState extends State<History>{
                       ]
                     ),
                     Container(
-                      padding: EdgeInsets.only(bottom:25, left:130),
-                      child: Text('\$10', style: TextStyle(
+                      padding: EdgeInsets.only(bottom:25, left:110),
+                      child: Text('$price', style: TextStyle(
                         fontWeight: FontWeight.bold,
                         )
                       )

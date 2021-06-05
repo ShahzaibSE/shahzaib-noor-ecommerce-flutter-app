@@ -65,21 +65,6 @@ class _ProductListState extends State<ProductList>{
                   ]
                 )
               ),
-              // RichText(text: TextSpan(
-              //     style: Theme.of(context).textTheme.bodyText1,
-              //     children: [
-              //       TextSpan(text: quantity),
-              //       TextSpan(
-              //         text: price,
-              //         style: TextStyle(
-              //           fontSize: 25,
-              //           fontWeight: FontWeight.bold,
-              //           color: Colors.purpleAccent,
-              //         )
-              //       )
-              //     ]
-              //   )
-              // )
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,
