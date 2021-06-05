@@ -19,7 +19,25 @@ class _HistoryState extends State<History>{
                     )),
       ),
       body:Center(
-        child: Text('History'),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              padding: EdgeInsets.all(20),
+              child: TextField(
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                    suffixIcon: Icon(Icons.search),
+                    hintText: 'Search',
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, style: BorderStyle.solid)
+                    )
+                )
+              )
+            )
+          ]),
       )
     );
   }
